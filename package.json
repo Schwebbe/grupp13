@@ -1,0 +1,25 @@
+{
+  "name": "grupp13",
+  "version": "1.0.0",
+  "description": "This is a project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schwebbe/grupp13.git"
+  },
+  "author": "Sebastian Selin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Schwebbe/grupp13/issues"
+  },
+  "homepage": "https://github.com/Schwebbe/grupp13#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.4"
+  }
+}
