@@ -9,12 +9,12 @@ var express = require('express'),
 
 var port = process.env.PORT || 1337;
 
-var io = require('socket.io');
+var io = require('socket.io').listen(app.listen(port));
 
 //This is the app configuration
 
 // Make the files in the public folder available to the world
-app.use(express.static(__dirname, 'public'));
+app.use(express.static(__dirname + '/public'));
 
 // This is a secret key that prevents others from opening your presentation
 // and controlling it. 
@@ -25,6 +25,7 @@ var pwd = 'janne';
 
 var presentation = io.on('connection', function (socket) {
     socket.on('load', function (data) {
+        
         socket.emit('access', {
             access: (data.key === pwd ? "granted" : "denied")
         });
@@ -34,7 +35,7 @@ var presentation = io.on('connection', function (socket) {
         // Check the secret key again
         if (data.key === pwd) {
             // Tell all connected clients to navigate to the new slide
-            presentation.emit('naviage', {
+            presentation.emit('navigate', {
                 hash: data.hash
             });
         }
@@ -42,4 +43,4 @@ var presentation = io.on('connection', function (socket) {
 
 
 });
-console.log('The server is running on port' + port);
+console.log('The server is running on port ' + port);
