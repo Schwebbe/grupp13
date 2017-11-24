@@ -3,18 +3,20 @@ $(function () {
     var blurredElements = $('.homebanner, div.reveal').addClass('blur');
     // Initialize the Reveal.js library with the default config options
     Reveal.initialize({
-        history: true
+        history: true //Every slide changes the url
     });
+    
     //This connects you to the socket
+    
     var socket = io();
 
     //This initiates the variable
 
-    var form = $('form-login'),
-        secretTextBox = form.find('input[type=text]');
-
-    var key = ""
-    animationTimeout;
+    var form = $('form.login');
+    var secretTextBox = form.find('input[type=text]');
+    var presentation = $('.reveal');
+    
+    var key = "", animationTimeout;
 
     //When you enter the page you will have to enter a password
 
@@ -42,7 +44,7 @@ $(function () {
         //If we do, we can proceed to the presentation
 
         if (data.access === "granted") {
-            blurredElements.removeClass('blurred');
+            presentation.removeClass('blurred');
             form.hide();
             var ignore = false;
 
@@ -75,7 +77,7 @@ $(function () {
                 setInterval(function () {
                     ignore = false;
                 }, 100);
-            })
+            });
         } else {
             //This happens when you enter wrong password
             clearTimeout(animationTimeout);
