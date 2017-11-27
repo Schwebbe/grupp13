@@ -3,25 +3,25 @@ body {
 }
 
 form.login {
-    position: fixed;
-    top: 50%;
-    max-height: 140px;
-    max-width: 390px;
-    width: 100%;
-    left: 50%;
-    margin: -70px 0 0 -195px;
-    text-align: center;
-    z-index: 2;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 60px 0 0;
+    position: fixed !important;
+    top: 50% !important;
+    max-height: 140px !important;
+    max-width: 390px !important;
+    width: 100% !important;
+    left: 50% !important;
+    margin: -70px 0 0 -195px !important;
+    text-align: center !important;
+    z-index: 2 !important;
+    height: 100% !important;
+    background-color: #fff !important;
+    border-radius: 5px !important;
+    padding: 60px 0 0 !important;
 }
 
 form.login span {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: bold !important;
+    font-size: 18px !important;
 }
 
 form.login input[type=text] {
@@ -34,7 +34,6 @@ form.login input[type=text] {
     background-color: rgba(255,255,255, 0.8);
     border: 1px solid #C5C5C5;
     border-radius: 2px;
-    margin-top: 26px;
 }
 
 form.login input[type=text].denied {
