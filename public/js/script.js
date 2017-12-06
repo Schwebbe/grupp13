@@ -13,7 +13,7 @@ $(function () {
     //This initiates the variable
 
     var form = $('form.login');
-    var secretTextBox = form.find('input[type=text]');
+    var secretTextBox = form.find('input[type=number]');
     var presentation = $('.reveal');
     
     var key = "", animationTimeout;

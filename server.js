@@ -19,13 +19,13 @@ app.use(express.static(__dirname + '/public'));
 // This is a secret key that prevents others from opening your presentation
 // and controlling it. 
 
-var pwd = 'janne';
+var pwd = "12345";
 
 // Initialize a new socket.io application
 
 var presentation = io.on('connection', function (socket) {
     socket.on('load', function (data) {
-        
+        console.log(data);
         socket.emit('access', {
             access: (data.key === pwd ? "granted" : "denied")
         });
